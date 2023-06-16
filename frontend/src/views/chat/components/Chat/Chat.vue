@@ -313,10 +313,10 @@ const auth = async () => {
         class="box-border w-11/12 lg:w-[400px] px-4 py-4 bg-white rounded-md" 
         status="403" 
         title="未授权访问"
-        description="请「微信扫一扫」，获取系统授权码，输入授权码即可访问。"
+        description="请「微信」扫一扫 获取系统授权码，输入授权码即可访问"
       >
         <template #icon>
-          <div style="text-align:center;">
+          <div style="text-align:center;padding-top:30px;">
             <img src="https://e.northviewer.cn/wp-content/uploads/2023/06/newbing.png" alt="qr-code" />
             <div style="color: #666; font-size: 12PX; margin:5px">上千用户，万分信赖</div>
           </div>
