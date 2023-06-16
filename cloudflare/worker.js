@@ -76,13 +76,13 @@ const getRandomIP = () => {
  * @returns
  */
 const home = async (pathname) => {
-  const baseUrl = 'https://raw.githubusercontent.com/adams549659584/go-proxy-bingai/master/';
+  const baseUrl = 'https://raw.githubusercontent.com/dereksunok/go-proxy-bingai/dev/';
   let url;
   // if (pathname.startsWith('/github/')) {
   if (pathname.indexOf('/github/') === 0) {
     url = pathname.replace('/github/', baseUrl);
   } else {
-    url = baseUrl + 'cloudflare/index.html';
+    url = baseUrl + 'cloudflare/welcome.html';
   }
   const res = await fetch(url);
   const newRes = new Response(res.body, res);
