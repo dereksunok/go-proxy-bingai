@@ -29,17 +29,17 @@ export const useChatStore = defineStore(
       },
       {
         baseUrl: 'https://bing-go-api.everyone-ai.win',
-        label: 'Cloudflare',
+        label: '本系统（默认）'||'Cloudflare',
       },
-      {
-        baseUrl: location.origin,
-        label: '本站',
-      },
-      {
-        baseUrl: '',
-        label: '自定义',
-        isCus: true,
-      },
+      // {
+      //   baseUrl: location.origin,
+      //   label: '本站',
+      // },
+      // {
+      //   baseUrl: '',
+      //   label: '自定义',
+      //   isCus: true,
+      // },
     ]);
     const sydneyCheckTimeoutMS = 3000;
 
