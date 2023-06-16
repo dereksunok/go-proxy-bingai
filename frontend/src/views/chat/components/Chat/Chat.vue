@@ -309,7 +309,18 @@ const auth = async () => {
     <ChatServiceSelect />
     <!-- 授权 -->
     <div v-if="isShowUnauthorizedModal" class="fixed top-0 left-0 w-screen h-screen flex justify-center items-center bg-black/40 z-50">
-      <NResult class="box-border w-11/12 lg:w-[400px] px-4 py-4 bg-white rounded-md" status="403" title="401 未授权">
+      <NResult 
+        class="box-border w-11/12 lg:w-[400px] px-4 py-4 bg-white rounded-md" 
+        status="403" 
+        title="未授权访问"
+        description="请「微信扫一扫」，获取系统授权码，输入授权码即可访问。"
+      >
+        <template #icon>
+          <div style="text-align:center;">
+            <img src="https://e.northviewer.cn/wp-content/uploads/2023/06/newbing.png" alt="qr-code" />
+            <div style="color: #666; font-size: 12PX; margin:5px">上千用户，万分信赖</div>
+          </div>
+        </template>
         <template #footer>
           <NInput class="w-11/12" v-model:value="authKey" type="password" placeholder="请输入授权码" maxlength="60" clearable></NInput>
           <n-button class="mt-4" secondary type="info" :loading="isAuthBtnLoading" @click="auth">授权</n-button>
