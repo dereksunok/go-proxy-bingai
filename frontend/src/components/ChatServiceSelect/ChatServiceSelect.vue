@@ -42,7 +42,7 @@ const handleChangeSydneyConfig = (config: SydneyConfig) => {
     <NTable striped>
       <tbody>
         <tr v-for="(config, index) in sydneyConfigs" :key="index">
-          <td>
+          <!-- <td>
             <span v-if="config.isCus" class="hidden lg:block">{{ config.label }}</span>
             <span v-else>{{ config.label }}</span>
             <NInput class="lg:hidden" v-if="config.isCus" v-model:value="config.baseUrl" placeholder="自定义聊天服务器链接" @change="handleChangeSydneyConfig(config)"></NInput>
@@ -50,7 +50,7 @@ const handleChangeSydneyConfig = (config: SydneyConfig) => {
           <td class="hidden lg:table-cell">
             <NInput v-if="config.isCus" v-model:value="config.baseUrl" placeholder="自定义聊天服务器链接" @change="handleChangeSydneyConfig(config)"></NInput>
             <span v-else>{{ config.baseUrl }}</span>
-          </td>
+          </td> -->
           <td>
             <div v-if="config.baseUrl && config.isUsable === undefined && config.delay === undefined" class="flex justify-center items-center flex-wrap gap-2">
               <NButton tertiary :loading="true" size="small" type="info"></NButton>
