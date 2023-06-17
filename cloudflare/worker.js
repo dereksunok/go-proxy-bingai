@@ -107,8 +107,23 @@ export default {
     if (currentUrl.pathname === '/' || currentUrl.pathname.indexOf('/github/') === 0) {
       return home(currentUrl.pathname);
     }
-    const targetUrl = new URL(SYDNEY_ORIGIN + currentUrl.pathname + currentUrl.search);
 
+    // 获取请求头 Referer 或 Origin
+    const referer = request.headers.get('referer') || request.headers.get('origin');
+    // 预设白名单
+    const refererWhiteList = [
+      'eazy-chat.top',
+      'cloudflare.com',
+      'dereksunok.workers.dev',
+      'everyone-ai.win'
+    ]
+    // 如果不是从 refererWhiteList 过来的请求，直接返回403
+    if (!referer || !refererWhiteList.some(item => referer.includes(item))) {
+      return new Response('Forbidden', { status: 403 });
+    }
+
+    // 进行数据代理
+    const targetUrl = new URL(SYDNEY_ORIGIN + currentUrl.pathname + currentUrl.search);
     const newHeaders = new Headers();
     request.headers.forEach((value, key) => {
       // console.log(`old : ${key} : ${value}`);
