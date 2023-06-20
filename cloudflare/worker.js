@@ -115,7 +115,8 @@ export default {
       'eazy-chat.top',
       'cloudflare.com',
       'dereksunok.workers.dev',
-      'everyone-ai.win'
+      'everyone-ai.win',
+      'localhost:4321'
     ]
     // 如果不是从 refererWhiteList 过来的请求，直接返回403
     if (!referer || !refererWhiteList.some(item => referer.includes(item))) {
