@@ -18,6 +18,14 @@
   <script>
     var vConsole = new window.VConsole();
   </script> -->
+  <script>
+    window.WebSocket = new Proxy(WebSocket, {
+      construct(target, args) {
+        console.log('WebSocket is being instantiated with arguments:', args);
+        return new target(...args);
+      }
+    });
+  </script>
   <script src="/js/bing/chat/global.js"></script>
   <script src="/js/bing/chat/amd.js"></script>
   <script src="/js/bing/chat/config.js"></script>
