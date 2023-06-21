@@ -10,6 +10,15 @@ const themeOverrides: GlobalThemeOverrides = {
     primaryColorSuppl: '#4098FCFF',
   },
 };
+
+declare global {
+  interface Window {
+    PAGE_EVENT_BUS: any;
+  }
+}
+window.PAGE_EVENT_BUS.on('pageCheckUser', () => {
+  console.log('pageCheckUser')
+});
 </script>
 
 <template>
