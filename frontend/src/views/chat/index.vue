@@ -108,7 +108,7 @@ setTimeout(() => {
     <Chat />
   </main>
 
-  <n-modal v-model:show="showTrialModal">
+  <n-modal v-model:show="showTrialModal" :mask-closable="false" :close-on-esc="false">
     <n-card style="width: 600px" title="温馨提示" :bordered="false" size="huge" role="dialog" aria-modal="true">
       <!-- <template #header-extra>
         噢！
