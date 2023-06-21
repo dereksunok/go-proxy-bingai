@@ -28,7 +28,7 @@ export const useChatStore = defineStore(
         label: 'Bing 官方',
       },
       {
-        baseUrl: 'https://bing-go-api.everyone-ai.win',
+        baseUrl: 'https://bing-go-api.dereksunok.workers.dev',
         label: '本系统（默认）'||'Cloudflare',
       },
       // {
