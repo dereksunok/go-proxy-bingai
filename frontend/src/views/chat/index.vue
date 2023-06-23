@@ -267,12 +267,19 @@ setTimeout(() => {
           </thead>
           <tbody align="center">
             <tr style="font-weight: bold; line-height: 26px;">
-              <td>¥12.8</td>
+              <td>
+                <img style="display: block;margin:10px auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/06/newbing-1.png" />
+                ¥12.8
+              </td>
               <td style="font-size:18px">
+                <img style="display: block;margin:10px auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/06/newbing-2.png" />
                 ¥39.8 
                 <sub><s style="font-size:12px;color: #999;">¥76.8</s></sub>
               </td>
-              <td>¥78.8</td>
+              <td>
+                <img style="display: block;margin:10px auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/06/newbing-3.png" />
+                ¥78.8
+              </td>
             </tr>
           </tbody>
         </n-table>
@@ -306,55 +313,7 @@ setTimeout(() => {
     <n-card style="width: 600px" title="温馨提示" :bordered="false" size="huge" role="dialog" aria-modal="true">
       <div align="center">
         <p>您的会员到期了！如需使用，请续费。</p>
-        <n-table :single-line="false">
-          <colgroup>
-            <col width="32%">
-            <col width="36%">
-            <col width="32%">
-          </colgroup>
-          <thead align="center">
-            <tr>
-              <th>
-                <n-gradient-text
-                    :gradient="{
-                      deg: 180,
-                      from: 'rgb(85, 85, 85)',
-                      to: 'rgb(99, 99, 99)'
-                    }"
-                  >
-                  月度会员
-                </n-gradient-text>
-              </th>
-              <th>
-                <n-gradient-text type="success">
-                  半年度会员
-                </n-gradient-text>
-                <sup style="color: chocolate;"> 推荐</sup>
-              </th>
-              <th>
-                <n-gradient-text
-                    :gradient="{
-                      deg: 180,
-                      from: 'rgb(85, 85, 85)',
-                      to: 'rgb(99, 99, 99)'
-                    }"
-                  >
-                  年度会员
-                </n-gradient-text>
-              </th>
-            </tr>
-          </thead>
-          <tbody align="center">
-            <tr style="font-weight: bold; line-height: 26px;">
-              <td>¥12.8</td>
-              <td style="font-size:18px">
-                ¥39.8 
-                <sub><s style="font-size:12px;color: #999;">¥76.8</s></sub>
-              </td>
-              <td>¥78.8</td>
-            </tr>
-          </tbody>
-        </n-table>
+        <img style="display: block; margin: auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/06/newbing-x.png" alt="">
       </div>
     </n-card>
   </n-modal>
