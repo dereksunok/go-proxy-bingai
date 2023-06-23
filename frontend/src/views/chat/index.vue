@@ -66,6 +66,7 @@ const oldUserMessage = () => {
 
 const newbingTrial = (isLogin = '') => {
   let trialFetch = () => {
+    expiredTime.value = '' // 试用到期时间
     // 试用fetch向后端发送post请求
     fetch(url.value + '/api/newbingTrial', {
       method: 'POST',
