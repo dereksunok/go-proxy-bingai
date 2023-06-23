@@ -17,6 +17,7 @@ const showEmailModal = ref(false); // 提醒试用结束
 const showTrialEndModal = ref(false); // 提醒试用结束
 const showVipEndModal = ref(false); // 提醒会员到期
 const showVipLoginModal = ref(false); // 提醒会员登录
+const expiredTime = ref(''); // 试用到期时间
 
 const formRef = ref<FormInst | null>(null)
 const formValue = ref({ email: '' })
@@ -100,6 +101,8 @@ const newbingTrial = (isLogin = '') => {
         if (isLogin) {
           message.success('登录成功，欢迎回来！');
         }
+        // 展示会员有效期
+        expiredTime.value = res.expiredTime || '';
         // 关闭所有弹窗
         showTrialModal.value = false;
         showEmailModal.value = false;
@@ -166,7 +169,7 @@ const getUserTrial = (e: MouseEvent) => {
 
 setTimeout(() => {
   newbingTrial();
-}, 1000);
+}, 3000);
 </script>
 
 <template>
@@ -174,6 +177,7 @@ setTimeout(() => {
     <ChatNav />
     <ChatPromptStore />
     <Chat />
+    <span v-if="expiredTime" style="position: absolute;right: 68px;top: 24px;line-height: 30px;border-radius: 10px;border: 1px solid #d28220;padding: 0 10px;background-color: #ffe5d4;">VIP到期: {{expiredTime}}</span>
   </main>
 
   <!-- 提醒试用 -->
