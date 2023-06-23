@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { 
   NModal, NCard, useMessage, NGradientText, NTable,
-  NButton, NInput, NForm, NFormItem, NGrid, NGi,
+  NButton, NInput, NForm, NFormItem, NGrid, NGi, NAlert,
   type FormInst
 } from 'naive-ui';
-import { ref } from 'vue'
+import type { MessageRenderMessage } from 'naive-ui'
+import { ref, h } from 'vue'
 import ChatNav from '@/components/ChatNav/ChatNav.vue';
 import ChatPromptStore from '@/components/ChatPromptStore/ChatPromptStore.vue';
 import Chat from './components/Chat/Chat.vue';
@@ -39,6 +40,29 @@ window.PAGE_EVENT_BUS.on('pageCheckUser', () => {
   newbingTrial();
 });
 
+const oldUserMessage = () => {
+  const renderMessage: MessageRenderMessage = (props) => {
+    return h(
+      NAlert,
+      {
+        type: 'warning',
+        closable: props.closable,
+        onClose: props.onClose,
+        title: '系统通知',
+      },
+      {
+        default: () => props.content
+      }
+    )
+  }
+  // 右上角 弹出 message info 提醒老会员联系客服
+  message.info('请2023-06-30前购买会员的用户，联系客服激活您的账号。', {
+    render: renderMessage,
+    closable: true,
+    duration: 10000,
+  });
+}
+
 const newbingTrial = (isLogin = '') => {
   let trialFetch = () => {
     // 试用fetch向后端发送post请求
@@ -57,12 +81,16 @@ const newbingTrial = (isLogin = '') => {
           message.info('该会员邮箱不存在，请申请试用！');
         }
         showTrialModal.value = true; // 提醒试用
+
+        oldUserMessage();
       } else if (res.code == -2) {
         if (isLogin) {
           message.info('您的试用已结束，请购买会员！');
           showVipLoginModal.value = false; // 展示会员购买
         }
         showTrialEndModal.value = true; // 提醒试用结束
+
+        oldUserMessage();
       } else if (res.code == -99) {
         if (isLogin) {
           message.info('您的会员已到期，请新购买会员！');
@@ -172,10 +200,10 @@ setTimeout(() => {
       </n-form>
       <template #footer>
         <div align="right">
-          <n-button quaternary @click="showTrialModal = false">
+          <!-- <n-button quaternary @click="showTrialModal = false">
             稍后提醒
           </n-button>
-          &nbsp; &nbsp;
+          &nbsp; &nbsp; -->
           <n-button v-if="!showEmailModal" type="primary" @click="showEmailModal = true">
             免费领取
           </n-button>
