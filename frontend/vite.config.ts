@@ -64,7 +64,7 @@ export default defineConfig(({ command, mode }) => {
   return {
     base: '/web',
     server: {
-      port: 4000,
+      port: 4321,
       open: false,
       host: '0.0.0.0',
       proxy: {
