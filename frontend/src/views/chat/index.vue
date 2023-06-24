@@ -57,7 +57,7 @@ const oldUserMessage = () => {
     )
   }
   // 右上角 弹出 message info 提醒老会员联系客服
-  message.info('请2023-06-30前购买会员的用户，联系客服激活您的账号。', {
+  message.info('请2023-06-25前购买会员的用户，联系客服激活您的账号。', {
     render: renderMessage,
     closable: true,
     duration: 10000,
