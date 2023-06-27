@@ -29,6 +29,7 @@ const rules = {
     trigger: ['input']
   }
 }
+let delayTimer: any = ref(null);
 
 declare global {
   interface Window {
@@ -37,7 +38,7 @@ declare global {
 }
 
 window.PAGE_EVENT_BUS.on('pageCheckUser', () => {
-  console.log('pageCheckUser')
+  // console.log('pageCheckUser')
   newbingTrial();
 });
 
@@ -65,6 +66,15 @@ const oldUserMessage = () => {
 }
 
 const newbingTrial = (isLogin = '') => {
+  let clearConversition = () => {
+    // 清空会话
+    if (delayTimer.value) clearTimeout(delayTimer.value)
+    delayTimer.value = setTimeout(() => {
+      let wp: any = document.querySelector('.cib-serp-main');
+      if (!wp || !wp.shadowRoot) return;
+      wp.shadowRoot.querySelector('#cib-action-bar-main').shadowRoot.querySelector('.button-compose').click()
+    }, 3000);
+  }
   let trialFetch = () => {
     expiredTime.value = '' // 试用到期时间
     // 试用fetch向后端发送post请求
@@ -80,10 +90,10 @@ const newbingTrial = (isLogin = '') => {
       if (res.code === -1) {
         if (isLogin) {
           showTrialEndModal.value = false;
+          clearConversition();
           message.info('该会员邮箱不存在，请申请试用！');
         }
         showTrialModal.value = true; // 提醒试用
-
         oldUserMessage();
       } else if (res.code == -2) {
         if (isLogin) {
@@ -91,12 +101,13 @@ const newbingTrial = (isLogin = '') => {
           showVipLoginModal.value = false; // 展示会员购买
         }
         showTrialEndModal.value = true; // 提醒试用结束
-
+        clearConversition();
         oldUserMessage();
       } else if (res.code == -99) {
         if (isLogin) {
           message.info('您的会员已到期，请新购买会员！');
         }
+        clearConversition();
         showVipEndModal.value = true; // 提醒会员到期
       } else if (res.code == 100 || res.code == 200) {
         if (isLogin) {
@@ -175,7 +186,7 @@ setTimeout(() => {
 
 <template>
   <main>
-    <ChatNav />
+    <ChatNav v-if="expiredTime" />
     <ChatPromptStore />
     <Chat />
     <span v-if="expiredTime" style="position: absolute;right: 68px;top: 24px;line-height: 30px;border-radius: 10px;border: 1px solid #d28220;padding: 0 10px;background-color: #ffe5d4;">VIP到期: {{expiredTime}}</span>
