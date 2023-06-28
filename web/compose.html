@@ -2673,14 +2673,44 @@
   //]]></script>
 
   <div id="pageCheckUser"></div>
+  <div id="messageContainer"></div>
+  <style>.email-input .n-input__input-el{ margin: 0 !important;box-shadow: none !important;}
+  #messageContainer {
+    position: fixed;
+    top: 10px;
+    left: 10%;
+    right: 10%;
+    z-index: 9999;
+    text-align: center;
+  }
+  .cus-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  .cus-message.info {
+    background-color: #e7f3fe;
+    color: #0366d6;
+  }
+  .cus-message.success {
+    background-color: #eafce3;
+    color: #28a745;
+  }
+  .cus-message.warning {
+    background-color: #fff5b1;
+    color: #d73a49;
+  }
+  .cus-message.error {
+    background-color: #fde2e2;
+    color: #cb2431;
+  }
+  </style>
 </body>
 
 <!-- PageCheckUser -->
-<script type="module">
-  import { createApp } from './js/lib/vue.esm-browser.prod.js'
-  import PageCheckUser from './js/lib/pageCheckUser.js'
-  createApp(PageCheckUser).mount('#pageCheckUser')
-</script>
+<script src="https://unpkg.com/vue@3.3.4/dist/vue.global.prod.js"></script>
+<script src="https://unpkg.com/naive-ui@2.34.4/dist/index.prod.js"></script>
+<script src="./js/lib/components.js"></script>
 
 <script>
   var _hmt = _hmt || [];
