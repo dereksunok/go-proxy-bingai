@@ -1847,7 +1847,7 @@
       padding: 3px;
       padding-top: 9px;
       border: 1px solid #e8e8e8;
-      border-radius: 8px
+      border-radius: 8px;
     }
 
     .uds_coauthor_wrapper .header {
@@ -2674,17 +2674,25 @@
 
   <div id="pageCheckUser"></div>
   <div id="messageContainer"></div>
-  <style>.email-input .n-input__input-el{ margin: 0 !important;box-shadow: none !important;}
+  <style>
+  .email-input .n-input__input-el{ margin: 0 !important;box-shadow: none !important;}
+  #letter_counter+.option-section { width: 47% !important;}
+  #letter_counter+.option-section+.option-section+.option-section{
+    width: 47% !important;
+    position: absolute;
+    right: 21PX;
+    top: 138px;
+  }
   #messageContainer {
     position: fixed;
     top: 10px;
-    left: 10%;
-    right: 10%;
+    left: 25%;
+    right: 25%;
     z-index: 9999;
     text-align: center;
   }
   .cus-message {
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 10px;
     border-radius: 5px;
   }

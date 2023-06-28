@@ -24,7 +24,12 @@ const naiveMessage = {
 };
 const App = {
     data() {
+        let href = location.origin + location.pathname
+        let showHrefBtn = location.search && location.search.indexOf("w") > -1
         return {
+            pageUrl: href,
+            showHrefBtn: showHrefBtn,
+
             url: 'https://fc-mp-fa7d97b0-49d8-409e-a902-fbfa876d91b0.next.bspapp.com',
             showTrialModal: false,
             showEmailModal: false,
@@ -171,7 +176,21 @@ const App = {
           }
     },
     template: `
-    <n-message-provider>
+        <div style="position: absolute; right: 20px; top: 34px;">
+          <a 
+            style="float: right;font-size: 12px;line-height: 22px;border: 1px solid rgb(113 113 113);margin-left: 10px;padding: 0px 15px;border-radius: 10px;background-color: rgb(242 242 242);color: #666;"
+            :href="pageUrl" v-if="showHrefBtn" target="_blank"
+          >
+            全屏展示
+          </a>
+          <span 
+            style="float: right;font-size: 12px; line-height: 22px; border-radius: 10px; border: 1px solid rgb(210, 130, 32); padding: 0px 15px; background-color: rgb(255, 229, 212);"
+            v-if="expiredTime"
+          >
+            VIP到期: {{ expiredTime }}
+          </span>
+        
+        </div>
         <n-modal v-model:show="showTrialModal" :mask-closable="false" :close-on-esc="false">
             <n-card style="width: 600px" :title="showEmailModal ? '领取试用' : '温馨提示'" :bordered="false" size="huge" role="dialog" aria-modal="true">
                 <!-- <template #header-extra>
@@ -310,7 +329,6 @@ const App = {
             </div>
             </n-card>
         </n-modal>
-    </n-message-provider>
     `
 }
 const app = Vue.createApp(App);
