@@ -172,7 +172,6 @@ const App = {
     },
     template: `
     <n-message-provider>
-        // 试用弹窗
         <n-modal v-model:show="showTrialModal" :mask-closable="false" :close-on-esc="false">
             <n-card style="width: 600px" :title="showEmailModal ? '领取试用' : '温馨提示'" :bordered="false" size="huge" role="dialog" aria-modal="true">
                 <!-- <template #header-extra>
@@ -211,7 +210,6 @@ const App = {
             </n-card>
         </n-modal>
         
-        // 试用结束
         <n-modal v-model:show="showTrialEndModal" :mask-closable="false" :close-on-esc="false">
             <n-card style="width: 740px" :title="showVipLoginModal ? '会员登录' : '请购买会员'" :bordered="false" size="huge" role="dialog" aria-modal="true">
             <!-- <template #header-extra>
@@ -304,7 +302,6 @@ const App = {
             </n-card>
         </n-modal>
 
-        // 会员到期
         <n-modal v-model:show="showVipEndModal" :mask-closable="false" :close-on-esc="false">
             <n-card style="width: 600px" title="温馨提示" :bordered="false" size="huge" role="dialog" aria-modal="true">
             <div align="center">
