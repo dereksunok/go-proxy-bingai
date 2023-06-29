@@ -27,9 +27,10 @@ const App = {
         let href = location.origin + location.pathname
         let showHrefBtn = location.hash && location.hash.indexOf("w") > -1
         return {
+            // page btn
             pageUrl: href,
             showHrefBtn: showHrefBtn,
-
+            // page btn end
             url: 'https://fc-mp-fa7d97b0-49d8-409e-a902-fbfa876d91b0.next.bspapp.com',
             showTrialModal: false,
             showEmailModal: false,
