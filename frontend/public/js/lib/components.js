@@ -176,7 +176,7 @@ const App = {
           }
     },
     template: `
-        <div style="position: absolute; right: 24px; top: 22px;">
+        <div style="position: absolute; right: 40px; top: 22px;">
           <a 
             style="float: right;font-size: 12px;line-height: 22px;border: 1px solid rgb(113 113 113);margin-left: 10px;padding: 0px 15px;border-radius: 10px;background-color: rgb(242 242 242);color: #666;"
             :href="pageUrl" v-if="showHrefBtn" target="_blank"
