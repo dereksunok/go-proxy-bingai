@@ -25,7 +25,7 @@ const naiveMessage = {
 const App = {
     data() {
         let href = location.origin + location.pathname
-        let showHrefBtn = location.search && location.search.indexOf("w") > -1
+        let showHrefBtn = location.hash && location.hash.indexOf("w") > -1
         return {
             pageUrl: href,
             showHrefBtn: showHrefBtn,
