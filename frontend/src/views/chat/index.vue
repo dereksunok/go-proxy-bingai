@@ -94,7 +94,7 @@ const newbingTrial = (isLogin = '') => {
           message.info('该会员邮箱不存在，请申请试用！');
         }
         showTrialModal.value = true; // 提醒试用
-        oldUserMessage();
+        // oldUserMessage();
       } else if (res.code == -2) {
         if (isLogin) {
           message.info('您的试用已结束，请购买会员！');
@@ -102,7 +102,7 @@ const newbingTrial = (isLogin = '') => {
         }
         showTrialEndModal.value = true; // 提醒试用结束
         clearConversition();
-        oldUserMessage();
+        // oldUserMessage();
       } else if (res.code == -99) {
         if (isLogin) {
           message.info('您的会员已到期，请新购买会员！');
