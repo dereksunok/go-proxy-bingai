@@ -69,11 +69,27 @@ const App = {
         newbingTrial (isLogin = '') {
             let clearConversition = () => {
               // 清空会话
+              let clearText = () => {
+                let stop_button = document.getElementById('stop_button')
+                if (stop_button) {
+                    stop_button.click()
+                    document.getElementById('preview_text').value = ''
+                }
+              }
               if (this.delayTimer) clearTimeout(this.delayTimer)
               this.delayTimer = setTimeout(() => {
                 // 请空会话
                 console.log('清空会话');
-              }, 3000);
+                setTimeout(() => {
+                    clearText()
+                    setTimeout(() => {
+                        clearText()
+                        setTimeout(() => {
+                            clearText()
+                        }, 3000);
+                    }, 3000);
+                }, 3000);
+              }, 1000);
             }
             let trialFetch = () => {
               this.expiredTime = '' // 试用到期时间
