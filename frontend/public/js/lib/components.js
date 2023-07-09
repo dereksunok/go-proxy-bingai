@@ -101,6 +101,7 @@ const App = {
                 },
                 body: JSON.stringify({
                   userEmail: localStorage.userEmail,
+                  sysName: '2'
                 }),
               }).then((res) => res.json()).then((res) => {
                 if (res.code === -1) {
@@ -167,6 +168,7 @@ const App = {
                   },
                   body: JSON.stringify({
                     userEmail: this.formValue.email,
+                    sysName: '2'
                   }),
                 }).then((res) => res.json()).then((res) => {
                   if (res.code === 100) {
@@ -298,17 +300,17 @@ const App = {
                 <tbody align="center">
                     <tr style="font-weight: bold; line-height: 26px;">
                     <td>
-                        <img style="display: block;margin:10px auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/06/newbing-1.png" />
+                        <img style="display: block;margin:10px auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/07/ai-1.html.png" />
                         ¥12.8
                     </td>
                     <td style="font-size:18px">
-                        <img style="display: block;margin:10px auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/06/newbing-2.png" />
-                        ¥39.8 
-                        <sub><s style="font-size:12px;color: #999;">¥76.8</s></sub>
+                        <img style="display: block;margin:10px auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/07/ai-2.html.png" />
+                        ¥29.8 
+                        <sub><s style="font-size:12px;color: #999;">¥69.8</s></sub>
                     </td>
                     <td>
-                        <img style="display: block;margin:10px auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/06/newbing-3.png" />
-                        ¥78.8
+                        <img style="display: block;margin:10px auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/07/ai-3.html.png" />
+                        ¥59.8
                     </td>
                     </tr>
                 </tbody>
@@ -342,7 +344,7 @@ const App = {
             <n-card style="width: 600px" title="温馨提示" :bordered="false" size="huge" role="dialog" aria-modal="true">
             <div align="center">
                 <p>您的会员到期了！如需使用，请续费。</p>
-                <img style="display: block; margin: auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/06/newbing-x.png" alt="">
+                <img style="display: block; margin: auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/07/ai-x.html.png" alt="">
             </div>
             </n-card>
         </n-modal>
