@@ -305,12 +305,12 @@ const App = {
                     </td>
                     <td style="font-size:18px">
                         <img style="display: block;margin:10px auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/07/ai-2.html.png" />
-                        ¥39.8 
-                        <sub><s style="font-size:12px;color: #999;">¥76.8</s></sub>
+                        ¥29.8 
+                        <sub><s style="font-size:12px;color: #999;">¥69.8</s></sub>
                     </td>
                     <td>
-                        <img style="display: block;margin:10px auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/07/ai-1.html.png" />
-                        ¥78.8
+                        <img style="display: block;margin:10px auto;" src="https://e.northviewer.cn/wp-content/uploads/2023/07/ai-3.html.png" />
+                        ¥59.8
                     </td>
                     </tr>
                 </tbody>
