@@ -101,6 +101,7 @@ const App = {
                 },
                 body: JSON.stringify({
                   userEmail: localStorage.userEmail,
+                  sysName: '2'
                 }),
               }).then((res) => res.json()).then((res) => {
                 if (res.code === -1) {
@@ -167,6 +168,7 @@ const App = {
                   },
                   body: JSON.stringify({
                     userEmail: this.formValue.email,
+                    sysName: '2'
                   }),
                 }).then((res) => res.json()).then((res) => {
                   if (res.code === 100) {
