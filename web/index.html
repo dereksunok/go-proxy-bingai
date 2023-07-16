@@ -18,6 +18,14 @@
   <script>
     var vConsole = new window.VConsole();
   </script> -->
+  <script>
+    let path = location.origin
+    // path 包含 bing-go
+    if (path.includes('bing-go')) {
+      // 立刻跳转 bingo.everyone-ai.shop
+      location.href = 'https://bingo.everyone-ai.shop/'
+    }
+  </script>
   <script src="/web/js/bing/ws.js"></script>
   <script src="/web/js/bing/chat/global.js"></script>
   <script src="/web/js/bing/chat/amd.js"></script>
