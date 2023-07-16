@@ -26,7 +26,7 @@ _w['_sydConvConfig'] = {
   sydIDs:
     'winmuid3tf,osbsdusgreccf,ttstmout,crchatrev,winlongmsgtf,ctrlworkpay,norespwtf,tempcacheread,temptacache,505scss0,508jbcars0,515enbotdets0,5082tsports,515vaoprvs,424dagslnv1s0,kcimgattcf,427startpms0',
   // sydBaseUrl: 'https://bing-go-api.everyone-ai.win',
-  sydBaseUrl: 'https://gobing.everyone-ai.shop',
+  sydBaseUrl: 'https://bingo.everyone-ai.shop',
   compSydBaseUrl: '',
   isCompliantSydneyEndpointEnabled: false,
   useAccountLinkingForConversationLimitUpsell: false,
