@@ -31,10 +31,10 @@ export const useChatStore = defineStore(
         baseUrl: 'https://bing-go-api.everyone-ai.win',
         label: '本系统（默认）'||'Cloudflare',
       },
-      {
-        baseUrl: location.origin,
-        label: '本站',
-      },
+      // {
+      //   baseUrl: location.origin,
+      //   label: '本站',
+      // },
       {
         baseUrl: '',
         label: '自定义',
