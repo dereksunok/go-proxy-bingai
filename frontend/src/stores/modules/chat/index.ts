@@ -27,10 +27,10 @@ export const useChatStore = defineStore(
         baseUrl: 'https://sydney.bing.com',
         label: 'Bing 官方',
       },
-      {
-        baseUrl: 'https://bing-go-api.everyone-ai.win',
-        label: 'Cloudflare',
-      },
+      // {
+      //   baseUrl: 'https://bing-go-api.everyone-ai.win',
+      //   label: 'Cloudflare',
+      // },
       {
         baseUrl: location.origin,
         label: '本站',
