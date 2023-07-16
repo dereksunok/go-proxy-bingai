@@ -35,11 +35,11 @@ export const useChatStore = defineStore(
       //   baseUrl: location.origin,
       //   label: '本站',
       // },
-      // {
-      //   baseUrl: '',
-      //   label: '自定义',
-      //   isCus: true,
-      // },
+      {
+        baseUrl: '',
+        label: '自定义',
+        isCus: true,
+      },
     ]);
     const sydneyCheckTimeoutMS = 3000;
 
